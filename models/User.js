@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
+const { Schema, model } = mongoose;
 
 mongoose.connect(process.env.DATABASE_UBI);
 
-const User = mongoose.model("User", {
+const userSchema = new Schema({
   username: String,
   firstName: String,
   email: String,
@@ -11,3 +12,6 @@ const User = mongoose.model("User", {
   journals: [String],
   stacks: [String],
 });
+
+const User = model("User", userSchema);
+module.exports = User;

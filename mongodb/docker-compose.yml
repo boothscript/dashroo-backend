@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    volumes:
+      - ~/Dev/dashroo-backend/mongodb/db:/data/db
+    ports:
+      - 27012:27017
+    restart: unless-stopped
