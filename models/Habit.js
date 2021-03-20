@@ -1,8 +1,9 @@
 const mongoose = require("mongoose");
+const { Schema, model } = mongoose;
 
 mongoose.connect(process.env.DATABASE_UBI);
 
-const Habit = mongoose.model("Habit", {
+const habitSchema = new Schema({
   user: String,
   name: String,
   color: Number,
@@ -17,3 +18,6 @@ const Habit = mongoose.model("Habit", {
     },
   ],
 });
+
+const Habit = model("Habit", habitSchema);
+module.exports = Habit;
