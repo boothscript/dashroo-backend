@@ -1,12 +1,10 @@
 const mongoose = require("mongoose");
 const { Schema, model } = mongoose;
 
-mongoose.connect(process.env.DATABASE_UBI);
-
 const habitSchema = new Schema({
   user: String,
   name: String,
-  color: Number,
+  color: String,
   availability: [Boolean],
   currentTarget: Number,
   records: [
